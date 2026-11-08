@@ -31,8 +31,9 @@ typedef struct {
    int count;
 } TaskList;
 
-void add_task();
-void remove_task();
-void search_task();
+void add_task(TaskList *list, const char *text, Quadrant quad);
+void remove_task(TaskList *list, int index);
+void search_task(TaskList *list, const char *text); // match text by character like nvim // ctrl+f search
+void free_list(TaskList *list);
 
 #endif
