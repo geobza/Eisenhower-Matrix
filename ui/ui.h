@@ -10,7 +10,8 @@
 
 /*
  * UI PLAN: *
- *
+ * - be able to navigate UI through typing commands, and through arrow keys / vim motions
+ * - render quadrants as their own windows and combine or as one?
  * 
  * 
 */

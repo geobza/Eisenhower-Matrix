@@ -2,17 +2,35 @@
 
 void init_screen(int height, int width) {
     initscr();
+    refresh();
     int rows, cols;
     getmaxyx(stdscr, rows, cols);
 
+    // render top left quadrant
+    WINDOW *q1 = newwin(rows / 2, cols / 2, 0, 0);
+    box(q1, 0, 0);
 
-    // draw x-axis
-    mvhline(rows / 2, 0, ACS_HLINE, cols);
+    
+    // render top right quadrant
+    WINDOW *q2 = newwin(rows / 2, cols / 2, 0, cols / 2);
+    box(q2, 0, 0);
 
-    // draw y-axis
-    mvvline(0, cols / 2, ACS_VLINE, rows);
+    // render bottom left quadrant
+    WINDOW *q3 = newwin(rows / 2, cols / 2, rows / 2, 0);
+    box(q3, 0, 0);
 
-    refresh();
+    // render bottom right quadrant
+    WINDOW *q4 = newwin(rows / 2, cols / 2, rows / 2, cols / 2);
+    box(q4, 0, 0);
+
+    // TODO: maybe make horizontal gap match vertical gap size (12px)
+
+    wrefresh(q1);
+    wrefresh(q2);
+    wrefresh(q3);
+    wrefresh(q4);
+
     getch();
+
     endwin();
 }
