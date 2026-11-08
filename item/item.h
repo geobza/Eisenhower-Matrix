@@ -7,11 +7,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+
 /* 
  *
  * ADD DYNAMIC ARRAY SPACING IN THE FUTURE
  * 
 */
+
 typedef enum {
     Q_URGENT_AND_IMPORTANT,
     Q_NOT_URGENT_AND_IMPORTANT,
