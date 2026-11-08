@@ -5,7 +5,7 @@ SRCS = main.c item/item.c ui/ui.c
 OBJS = $(SRCS:.c=.o)
 
 main: $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) -lncurses
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

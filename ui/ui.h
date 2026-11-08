@@ -20,7 +20,7 @@ enum direction { UP, DOWN, RIGHT, LEFT }; // be able to move directions?
 // text based and gui based modifications
 // maybe make parameters a item class
 
-void init_screen(int *height, int *width);
-void draw_screen();
+void init_screen(int height, int width);
+void draw_screen(); // refresh upon updating
 
 #endif
