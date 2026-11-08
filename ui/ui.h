@@ -4,7 +4,6 @@
 #include <ncurses.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "item.h"
 
 #define QUADRANT_WIDTH 100
 #define QUADRANT_HEIGHT 100
