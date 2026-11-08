@@ -8,6 +8,13 @@
 #define QUADRANT_WIDTH 100
 #define QUADRANT_HEIGHT 100
 
+/*
+ * UI PLAN: *
+ *
+ * 
+ * 
+*/
+
 enum commands { ENTER, A, R, M, ESC };
 enum direction { UP, DOWN, RIGHT, LEFT }; // be able to move directions?
 // text based and gui based modifications
