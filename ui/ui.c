@@ -10,25 +10,24 @@ void init_screen(int height, int width) {
     // render top left quadrant
     WINDOW *q1 = newwin(rows / 2, cols / 2, 0, 0);
     box(q1, 0, 0);
-    mvwprintw(q1, 0, 2, " Urgent & Important ");
+    draw_title(q1, "Urgent & Important");
 
-    
     // render top right quadrant
     WINDOW *q2 = newwin(rows / 2, cols / 2, 0, cols / 2);
     box(q2, 0, 0);
-    mvwprintw(q2, 0, rows / 2, " Not Urgent & Important ");
+    draw_title(q2, "Urgent & Not Important");
 
     // render bottom left quadrant
     WINDOW *q3 = newwin(rows / 2, cols / 2, rows / 2, 0);
     box(q3, 0, 0);
-    mvwprintw(q1, 0, 2, " Urgent & Not Important ");
+    draw_title(q3, "Not Urgent & Important");
 
     // render bottom right quadrant
     WINDOW *q4 = newwin(rows / 2, cols / 2, rows / 2, cols / 2);
     box(q4, 0, 0);
-    mvwprintw(q1, 0, 2, " Not Urgent & Not Important ");
+    draw_title(q4, "Not Urgent & Not Important");
 
-    // TODO: maybe make horizontal gap match vertical gap size (12px)
+    // TODO: maybe make horizontal gap match vertical gap size ()
 
     wrefresh(q1);
     wrefresh(q2);
