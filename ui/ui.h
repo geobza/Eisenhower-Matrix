@@ -15,6 +15,11 @@
  * - be able to navigate UI through typing commands, and through arrow keys / vim motions
  * - render quadrants as their own windows and combine or as one?
  * 
+ * TAB, LEFT, RIGHT, UP, DOWN = move between quadrants
+ * ENTER = select quadrant 
+ * UP / DOWN = move up / down between items in the quadrant
+ * ENTER = select item, BACKSPACE = remove item,
+ * command to add item in quadrant?
  * 
 */
 
