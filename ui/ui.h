@@ -3,8 +3,7 @@
 
 #include <ncurses.h>
 #include <string.h>
-#include "item.h"
-
+#include "item/item.h"
 #define QUADRANT_WIDTH 100
 #define QUADRANT_HEIGHT 100
 
