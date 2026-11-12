@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "item.h"
 
 #define QUADRANT_WIDTH 100
 #define QUADRANT_HEIGHT 100
@@ -23,7 +24,7 @@ enum direction { UP, DOWN, RIGHT, LEFT }; // be able to move directions?
 // maybe make parameters a item class
 
 void init_screen(int height, int width);
-void draw_screen(); // refresh upon updating
+void draw_screen(WINDOW *win, Quadrant q, const TaskList *tasks, int count, int selected, int scroll); // refresh upon updating
 
 static void draw_title(WINDOW *win, const char *title) {
     int h, w;
