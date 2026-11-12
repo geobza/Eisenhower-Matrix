@@ -35,6 +35,5 @@ void init_screen(int height, int width) {
     wrefresh(q4);
 
     getch();
-
     endwin();
 }
