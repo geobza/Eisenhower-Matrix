@@ -4,8 +4,6 @@
 #define MAX_TASKS 100
 #define MAX_TEXT 128
 
-#include <stdlib.h>
-#include <stdio.h>
 #include <stdbool.h>
 
 /* 
