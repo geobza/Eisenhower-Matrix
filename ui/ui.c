@@ -37,6 +37,9 @@ void handle_key(int ch) {
         draw_title(&q[prev], false);
         draw_title(&q[active], true);
     }
+    if (ch == KEY_ENTER) {
+        // select and go into quadrant
+    }
 }
 
 void delete_screen(void) {
