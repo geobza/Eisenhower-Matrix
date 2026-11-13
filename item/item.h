@@ -16,6 +16,7 @@
 typedef struct {
     WINDOW *box;
     WINDOW *inner;
+    const char *title;
     char items[32][64];
     int count;
 } Quadrant;
