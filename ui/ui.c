@@ -1,37 +1,27 @@
 #include "ui.h"
 
-void init_screen(int height, int width) {
+static void init_quadrant(Quadrant *q, int h, int w, int y, int x) {
+    q->box = newwin(h, w, y, x);
+    box(q->box, 0, 0);
+    q->inner = (derwin(q->box, h - 2, w - 2, 1, 1));
+    q->count = 0;
+    wrefresh(q->box);
+}
+
+void init_screen(void) {
     initscr();
     curs_set(0);
     refresh();
     int rows, cols;
     getmaxyx(stdscr, rows, cols);
 
-    // render top left quadrant
-    WINDOW *q1 = newwin(rows / 2, cols / 2, 0, 0);
-    box(q1, 0, 0);
-    draw_title(q1, "Urgent & Important");
+    static Quadrant q[4];
+    init_quadrant(&q[0], rows / 2, cols / 2, 0, 0);
+    init_quadrant(&q[1], rows / 2, cols - cols / 2, 0, cols / 2);
+    init_quadrant(&q[2], rows - rows / 2, cols / 2, rows / 2, 0);
+    init_quadrant(&q[3], rows - rows / 2, cols - cols / 2, rows / 2, cols / 2);
 
-    // render top right quadrant
-    WINDOW *q2 = newwin(rows / 2, cols / 2, 0, cols / 2);
-    box(q2, 0, 0);
-    draw_title(q2, "Urgent & Not Important");
-
-    // render bottom left quadrant
-    WINDOW *q3 = newwin(rows / 2, cols / 2, rows / 2, 0);
-    box(q3, 0, 0);
-    draw_title(q3, "Not Urgent & Important");
-
-    // render bottom right quadrant
-    WINDOW *q4 = newwin(rows / 2, cols / 2, rows / 2, cols / 2);
-    box(q4, 0, 0);
-    draw_title(q4, "Not Urgent & Not Important");
-
-
-    wrefresh(q1);
-    wrefresh(q2);
-    wrefresh(q3);
-    wrefresh(q4);
+    /* draw titles and items, then getch() / main loop, then endwin() */
 
     getch();
     endwin();

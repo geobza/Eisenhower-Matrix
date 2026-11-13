@@ -7,6 +7,6 @@ int main(int argc, char* argv[]) {
     int height = 100;
     int width = 100;
 
-    init_screen(height, width);
+    void init_screen(void);
     return 0;
 }

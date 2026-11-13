@@ -5,6 +5,7 @@
 #define MAX_TEXT 128
 
 #include <stdbool.h>
+#include <ncurses.h>
 
 /* 
  *
@@ -12,12 +13,11 @@
  * 
 */
 
-typedef enum {
-    Q_URGENT_AND_IMPORTANT,
-    Q_NOT_URGENT_AND_IMPORTANT,
-    Q_URGENT_AND_NOT_IMPORTANT,
-    Q_NOT_URGENT_AND_NOT_IMPORTANT,
-    Q_COUNT
+typedef struct {
+    WINDOW *box;
+    WINDOW *inner;
+    char items[32][64];
+    int count;
 } Quadrant;
 
 typedef struct {

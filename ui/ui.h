@@ -26,7 +26,8 @@ enum direction { UP, DOWN, RIGHT, LEFT }; // be able to move directions?
 // text based and gui based modifications
 // maybe make parameters a item class
 
-void init_screen(int height, int width);
+void init_screen(void);
+static void init_quadrant(Quadrant *q, int h, int w, int y, int x);
 void draw_screen(WINDOW *win, Quadrant q, const TaskList *tasks, int count, int selected, int scroll); // refresh upon updating
 
 static void draw_title(WINDOW *win, const char *title) {
