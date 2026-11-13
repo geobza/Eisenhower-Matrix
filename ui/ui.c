@@ -34,3 +34,15 @@ void init_screen(void) {
     getch();
     endwin();
 }
+
+// need to have some form of overhead that can detect the scr/quad
+void handle_ch(int ch) {
+    int selected = 0;
+    if (ch == '\t') {
+        if (selected == 3) {
+            selected = 0;
+        }
+        wattron(&q[selected]->box, A_REVERSE);
+        selected++;
+    }
+}
