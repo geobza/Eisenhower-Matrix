@@ -27,7 +27,6 @@ void init_screen(int height, int width) {
     box(q4, 0, 0);
     draw_title(q4, "Not Urgent & Not Important");
 
-    // TODO: maybe make horizontal gap match vertical gap size ()
 
     wrefresh(q1);
     wrefresh(q2);
