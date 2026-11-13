@@ -22,6 +22,14 @@ void init_screen(void) {
     init_quadrant(&q[3], rows - rows / 2, cols - cols / 2, rows / 2, cols / 2);
 
     /* draw titles and items, then getch() / main loop, then endwin() */
+    draw_title(q[0].box, "Urgent & Important");
+    draw_title(q[1].box, "Urgent & Not Important");
+    draw_title(q[2].box, "Not Urgent & Important");
+    draw_title(q[3].box, "Not Urgent & Not Important");
+
+    for (int i = 0; i < 4; i++) {
+        wrefresh(q[i].box);
+    }
 
     getch();
     endwin();
