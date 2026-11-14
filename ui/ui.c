@@ -43,11 +43,11 @@ void handle_key(int ch) {
     } 
 
     if (ch == 'a') {
-
+        // add_item_prompt()
     }
     
     if (ch == 'd') {
-
+        // remove_item_prompt()
     }
 }
 

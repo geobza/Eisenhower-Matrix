@@ -23,21 +23,19 @@
 */
 
 enum commands { ENTER, A, R, M, ESC };
-enum direction { UP, DOWN, RIGHT, LEFT }; // be able to move directions?
+enum direction { UP, DOWN, RIGHT, LEFT }; 
 static Quadrant q[4];
 static int active = 0;
 
 void init_screen(void);
 static void init_quadrant(Quadrant *q, const char *title, int h, int w, int y, int x);
-
 void draw_screen(WINDOW *win, Quadrant q, const TaskList *tasks, int count, int selected, int scroll); // refresh upon updating
-
+void delete_screen(void);
 void handle_key(int ch);
 
 void add_item_prompt(Quadrant *q);
 
 void remove_item_prompt(Quadrant *q);
-
 
 static void draw_title(const Quadrant *q, bool highlighted) {
     if (highlighted) wattron(q->box, A_REVERSE);
